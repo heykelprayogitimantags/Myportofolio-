@@ -5,11 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
-// ─────────────────────────────────────────────────────────
-//  KONFIGURASI — edit bagian ini saja
-// ─────────────────────────────────────────────────────────
-const LOGO_SRC      = "/images/logo.png"; // path logo di folder public/images/
-const USE_IMG_LOGO  = true;               // true = gambar | false = teks "HP."
+const LOGO_SRC      = "/images/logo.png"; 
+const USE_IMG_LOGO  = true;              
 
 const navItems = [
   { name: "About",        href: "#about"         },
