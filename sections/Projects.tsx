@@ -110,13 +110,6 @@ export default function Projects() {
               Featured{" "}
               <span style={{ color: "var(--sky)" }}>Projects</span>
             </h2>
-            <p
-              className="max-w-sm text-sm leading-relaxed"
-              style={{ color: "var(--text2)" }}
-            >
-              Karya terpilih mencakup Web, Mobile App, hingga implementasi
-              Artificial Intelligence.
-            </p>
           </div>
         </motion.div>
 

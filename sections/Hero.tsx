@@ -356,7 +356,7 @@ export default function Hero() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  💻 Full Stack Dev
+                  Full Stack Dev
                 </motion.div>
 
                 {/* Floating card — kanan atas */}
@@ -372,7 +372,7 @@ export default function Hero() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  📱 Flutter Dev
+                  Flutter Dev
                 </motion.div>
 
                 {/* Floating card — kanan tengah */}
@@ -388,7 +388,7 @@ export default function Hero() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  🛡️ IT Security
+                  IT Security
                 </motion.div>
               </div>
             </motion.div>
