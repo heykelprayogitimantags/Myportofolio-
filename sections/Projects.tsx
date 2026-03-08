@@ -15,20 +15,18 @@ const projectsData = [
     accent: "#38BDF8",
     github: "https://github.com/heykel/polcare",
     demo: "#",
-    tags: ["Flutter", "Firebase", "CNN"],
-    status: "In Development",
+    tags: ["Flutter", "Firebase", "Python"],
   },
   {
     id: 2,
     title: "Es Dongan | E-Commerce Minuman & Makanan",
     category: "Web",
-    desc: "Sistem Manajemen Pemeliharaan Perangkat untuk BNI KCP KIM Mabar 2. Memudahkan monitoring aset hardware secara digital dan real-time.",
-    image: "/images/projects/simperas.png",
+    desc: "Web Es Dongan adalah sistem informasi e-commerce berbasis web yang dirancang untuk mendigitalisasi proses pemesanan dan manajemen stok pada UMKM minuman 'Es Dongan'.",
+    image: "/images/Es Dongan.png",
     accent: "#0EA5E9",
     github: "#",
     demo: "#",
-    tags: ["React", "Node.js", "MySQL"],
-    status: "Internal",
+    tags: ["CodeIgniter4", "php", "MySQL"],
   },
   {
     id: 3,
@@ -220,24 +218,6 @@ export default function Projects() {
                         "linear-gradient(to top, rgba(7,13,26,0.7) 0%, transparent 50%)",
                     }}
                   />
-
-                  {/* Status badge */}
-                  <div className="absolute top-3 left-3">
-                    <span
-                      className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold font-syne backdrop-blur-sm"
-                      style={{
-                        background: "rgba(7,13,26,0.75)",
-                        border:     `1px solid ${statusColor[project.status]}44`,
-                        color:      statusColor[project.status],
-                      }}
-                    >
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ background: statusColor[project.status] }}
-                      />
-                      {project.status}
-                    </span>
-                  </div>
 
                   {/* Category badge */}
                   <div className="absolute top-3 right-3">
