@@ -327,7 +327,6 @@ export default function Hero() {
                     boxShadow: "0 0 40px rgba(56,189,248,0.25)",
                   }}
                 >
-                  
                   <Image
                     src="/images/hero.png"
                     alt="Heykel Prayogi"
