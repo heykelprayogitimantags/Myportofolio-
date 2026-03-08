@@ -1,12 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
-
-const LOGO_SRC      = "/images/logo.png"; 
-const USE_IMG_LOGO  = true;              
 
 const navItems = [
   { name: "About",        href: "#about"         },
@@ -16,21 +12,28 @@ const navItems = [
   { name: "Certificates", href: "#certifications" },
   { name: "Contact",      href: "#contact"        },
 ];
-// ─────────────────────────────────────────────────────────
 
 export default function Navbar() {
   const [isOpen,   setIsOpen]   = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeId, setActiveId] = useState("");
 
-  // Glassmorphism saat scroll
+  // Scroll progress bar
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  // Glassmorphism on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Active link via IntersectionObserver
+  // Active section via IntersectionObserver
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
     navItems.forEach(({ href }) => {
@@ -46,33 +49,13 @@ export default function Navbar() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
-  // Lock scroll saat drawer terbuka
+  // Lock body scroll when drawer open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
   const close = () => setIsOpen(false);
-
-  const LogoContent = ({ h = 36 }: { h?: number }) =>
-    USE_IMG_LOGO ? (
-      <Image
-        src={LOGO_SRC}
-        alt="Logo Heykel Prayogi"
-        width={130}
-        height={h}
-        className="object-contain w-auto"
-        style={{ height: h }}
-        priority
-      />
-    ) : (
-      <span
-        className="font-syne font-extrabold text-xl tracking-tight"
-        style={{ color: "var(--text)" }}
-      >
-        HP<span style={{ color: "var(--sky)" }}>.</span>
-      </span>
-    );
 
   return (
     <>
@@ -87,11 +70,31 @@ export default function Navbar() {
           borderBottom:         scrolled ? "1px solid var(--border)" : "1px solid transparent",
         }}
       >
+        {/* Scroll progress bar */}
+        <motion.div
+          style={{
+            scaleX,
+            position:        "absolute",
+            top:             0,
+            left:            0,
+            right:           0,
+            height:          "2px",
+            transformOrigin: "0%",
+            background:      "linear-gradient(90deg, var(--sky-dark), var(--sky), #a78bfa)",
+            boxShadow:       "0 0 12px var(--sky-glow)",
+          }}
+        />
+
         <div className="max-w-[1160px] mx-auto px-6 flex items-center justify-between">
 
-          {/* Logo */}
-          <a href="#hero" aria-label="Home" className="flex-shrink-0">
-            <LogoContent h={36} />
+          {/* Name text as logo */}
+          <a
+            href="#hero"
+            aria-label="Home"
+            className="font-syne font-extrabold text-xl tracking-tight flex-shrink-0"
+            style={{ color: "var(--text)" }}
+          >
+            hykl<span style={{ color: "var(--sky)" }}>.</span>
           </a>
 
           {/* Desktop nav links */}
@@ -139,8 +142,8 @@ export default function Navbar() {
               className="hidden sm:inline-flex items-center gap-1.5 font-syne font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-300 flex-shrink-0"
               style={{
                 background: "linear-gradient(135deg, var(--sky-dark), var(--sky))",
-                color: "#000",
-                boxShadow: "0 0 20px var(--sky-glow)",
+                color:      "#000",
+                boxShadow:  "0 0 20px var(--sky-glow)",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
               onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
@@ -156,7 +159,7 @@ export default function Navbar() {
               style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
             >
               {[
-                isOpen ? "rotate(45deg) translate(0,7px)"  : "none",
+                isOpen ? "rotate(45deg) translate(0,7px)"   : "none",
                 "none",
                 isOpen ? "rotate(-45deg) translate(0,-7px)" : "none",
               ].map((transform, i) => (
@@ -164,9 +167,9 @@ export default function Navbar() {
                   key={i}
                   className="block w-[18px] h-[2px] rounded-full transition-all duration-300"
                   style={{
-                    background: "var(--text)",
+                    background:      "var(--text)",
                     transform,
-                    opacity: i === 1 && isOpen ? 0 : 1,
+                    opacity:         i === 1 && isOpen ? 0 : 1,
                     transformOrigin: "center",
                   }}
                 />
@@ -192,7 +195,7 @@ export default function Navbar() {
               onClick={close}
             />
 
-            {/* Drawer */}
+            {/* Drawer panel */}
             <motion.aside
               key="drawer"
               initial={{ x: "100%" }}
@@ -202,27 +205,40 @@ export default function Navbar() {
               className="fixed top-0 right-0 bottom-0 z-[1600] w-[min(300px,88vw)] flex flex-col lg:hidden"
               style={{ background: "var(--bg2)", borderLeft: "1px solid var(--border)" }}
             >
-              {/* Header */}
+              {/* Drawer header */}
               <div
                 className="flex items-center justify-between px-7 py-5"
                 style={{ borderBottom: "1px solid var(--border)" }}
               >
-                <LogoContent h={32} />
+                <span
+                  className="font-syne font-extrabold text-lg"
+                  style={{ color: "var(--text)" }}
+                >
+                  HP<span style={{ color: "var(--sky)" }}>.</span>
+                </span>
                 <button
                   onClick={close}
-                  aria-label="Tutup"
+                  aria-label="Tutup menu"
                   className="w-9 h-9 rounded-full flex items-center justify-center text-sm transition-all duration-300"
                   style={{
                     background: "var(--surface)",
-                    border: "1px solid var(--border)",
-                    color: "var(--text2)",
+                    border:     "1px solid var(--border)",
+                    color:      "var(--text2)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "var(--sky)";
+                    e.currentTarget.style.color       = "var(--sky)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "var(--border)";
+                    e.currentTarget.style.color       = "var(--text2)";
                   }}
                 >
                   ✕
                 </button>
               </div>
 
-              {/* Links */}
+              {/* Drawer links */}
               <nav className="flex flex-col gap-1 px-5 py-6 flex-1 overflow-y-auto">
                 {navItems.map(({ name, href }, i) => {
                   const id       = href.slice(1);
@@ -250,7 +266,7 @@ export default function Navbar() {
                 })}
               </nav>
 
-              {/* Footer */}
+              {/* Drawer footer */}
               <div
                 className="px-7 py-6 flex flex-col gap-3"
                 style={{ borderTop: "1px solid var(--border)" }}
@@ -261,8 +277,8 @@ export default function Navbar() {
                   className="flex items-center justify-center w-full py-3.5 rounded-full font-syne font-bold text-sm uppercase tracking-wider"
                   style={{
                     background: "linear-gradient(135deg, var(--sky-dark), var(--sky))",
-                    color: "#000",
-                    boxShadow: "0 0 24px var(--sky-glow)",
+                    color:      "#000",
+                    boxShadow:  "0 0 24px var(--sky-glow)",
                   }}
                 >
                   Let&apos;s Talk →
