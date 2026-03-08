@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS VARIABLES ─────────────────────────────────── */
+:root {
+  --sky:        #38BDF8;
+  --sky-dark:   #0EA5E9;
+  --sky-dim:    rgba(56,189,248,0.12);
+  --sky-glow:   rgba(56,189,248,0.35);
+  --bg:         #070D1A;
+  --bg2:        #0C1528;
+  --surface:    rgba(255,255,255,0.04);
+  --surface2:   rgba(255,255,255,0.07);
+  --border:     rgba(255,255,255,0.08);
+  --text:       #E8F4FD;
+  --text2:      #7A9BB5;
+  --text3:      #4A6A85;
+}
+
+.light {
+  --bg:       #F0F7FF;
+  --bg2:      #E2EFF9;
+  --surface:  rgba(255,255,255,0.7);
+  --surface2: rgba(255,255,255,0.9);
+  --border:   rgba(14,165,233,0.15);
+  --text:     #0C1B2A;
+  --text2:    #3A6080;
+  --text3:    #8AAABF;
+  --sky-dim:  rgba(56,189,248,0.1);
+}
+
+/* ── BASE ───────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  transition: background 0.35s ease, color 0.35s ease;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--sky);
+  color: #000;
+}
+
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--sky-dark); border-radius: 4px; }
+
+/* ── GLASSMORPHISM ─────────────────────────────────── */
+@layer components {
+  .glass {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+  }
+
+  .glass2 {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-xs font-bold tracking-[0.18em] uppercase font-syne;
+    color: var(--sky);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--sky);
+    border-radius: 2px;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold font-syne tracking-wide;
+    background: var(--sky-dim);
+    border: 1px solid rgba(56,189,248,0.2);
+    color: var(--sky);
+  }
+
+  /* Progress bar */
+  .progress-track {
+    height: 4px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--sky-dark), var(--sky));
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4,0,0.2,1) 0.3s;
+  }
+}
+
+/* ── HERO GRID BG ──────────────────────────────────── */
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 70% at 70% 40%, black 0%, transparent 100%);
+}
