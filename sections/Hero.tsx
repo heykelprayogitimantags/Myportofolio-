@@ -329,7 +329,7 @@ export default function Hero() {
                 >
                   
                   <Image
-                    src="/images/heykel.jpeg"
+                    src="/images/hero.png"
                     alt="Heykel Prayogi"
                     fill
                     className="object-cover object-top"
