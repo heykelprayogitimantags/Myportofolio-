@@ -2,37 +2,45 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar       from "@/components/Navbar";
+import Footer       from "@/components/Footer";
+import ScrollToTop  from "@/components/ScrollToTop";
 
 const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  subsets:  ["latin"],
+  weight:   ["400", "600", "700", "800"],
   variable: "--font-syne",
-  display: "swap",
+  display:  "swap",
 });
 
 const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  subsets:  ["latin"],
+  weight:   ["300", "400", "500"],
   variable: "--font-dm",
-  display: "swap",
+  display:  "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Heykel Prayogi — Web & System Developer",
-  description:
-    "Portfolio of Heykel Prayogi, a Web Developer, System Developer & Technology Enthusiast based in Medan, Indonesia.",
+  title:       "Heykel Prayogi Web & Mobile Developer",
+  description: "Portfolio of Heykel Prayogi, a Web & Mobile Developer based in Medan, Indonesia. Passionate about building modern, clean, and impactful digital solutions.",
+  keywords:    ["Heykel Prayogi", "Web Developer", "Mobile Developer", "Flutter", "Next.js", "Medan", "Portfolio"],
+  authors:     [{ name: "Heykel Prayogi Timanta" }],
+  creator:     "Heykel Prayogi Timanta",
   openGraph: {
-    title: "Heykel Prayogi — Web & System Developer",
-    description:
-      "Passionate developer building modern web & Android applications with clean code.",
-    type: "website",
-    locale: "id_ID",
+    title:       "Heykel Prayogi Web & Mobile Developer",
+    description: "Passionate developer building modern web & mobile applications with clean code and great UX.",
+    type:        "website",
+    locale:      "id_ID",
+    siteName:    "Heykel Prayogi Portfolio",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Heykel Prayogi — Portfolio",
+    card:    "summary_large_image",
+    title:   "Heykel Prayogi — Portfolio",
+    description: "Web & Mobile Developer based in Medan, Indonesia.",
+  },
+  robots: {
+    index:  true,
+    follow: true,
   },
 };
 
@@ -43,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${syne.variable} ${dmSans.variable}`}>
+      <body className={`${syne.variable} ${dmSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -52,6 +60,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
