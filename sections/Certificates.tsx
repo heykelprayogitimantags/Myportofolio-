@@ -29,12 +29,12 @@ const certs = [
       issuerShort: "BNSP",
       year: "2026",
       icon: "🌐",
-      image: "/images/certs/bnsp-junior-web-dev.jpg",
+      image: "/images/bnsp.jpeg",
       issuerLogo: "/images/issuers/bnsp.png",
       issuerColor: "#CC0000", //
       desc: "Sertifikasi kompetensi nasional dalam bidang Pengembangan Website (Web Development) yang diterbitkan oleh LSP Teknologi Digital melalui program Vocational School Graduate Academy (VSGA).",
       credentialId: "62090 2513 3 0168630 2026",
-      link: "https://bnsp.go.id", // Atau link verifikasi LSP Teknologi Digital jika ada
+      link: "https://bnsp.go.id", 
       category: "Web Development",
   },
   {
