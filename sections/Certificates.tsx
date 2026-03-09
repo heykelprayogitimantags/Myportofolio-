@@ -44,7 +44,7 @@ const certs = [
     issuerShort: "Dicoding",
     year: "2025",
     icon: "🤖",
-    image: "/images/certs/dicoding-ai-dasar.jpg",
+    image: "/images/aidasar.png",
     issuerLogo: "/images/issuers/dicoding.png",
     issuerColor: "#2D3E50", // 
     desc: "Mempelajari konsep dasar kecerdasan buatan (AI), sejarah perkembangan AI, serta pemahaman tentang Machine Learning dan Deep Learning sebagai pilar utama teknologi masa depan.",
