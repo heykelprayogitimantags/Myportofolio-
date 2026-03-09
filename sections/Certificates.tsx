@@ -16,19 +16,19 @@ import { ExternalLink, Shield, X } from "lucide-react";
 // ─────────────────────────────────────────────────────────
 const certs = [
   {
-    id: 1,
-    name:        "Cybersecurity Essentials",
-    issuer:      "Cisco Networking Academy",
-    issuerShort: "Cisco",
-    year:        "2025",
-    icon:        "🛡️",
-    image:       "/images/certs/cisco-cybersecurity.jpg",
-    issuerLogo:  "/images/issuers/cisco.png",
-    issuerColor: "#1BA0D7",
-    desc:        "Mempelajari dasar-dasar keamanan siber, ancaman jaringan, hingga teknik mitigasi serangan pada infrastruktur IT.",
-    credentialId:"ID-123456",
-    link:        "https://cisco.com/verify",
-    category:    "Cybersecurity",
+    id: 1, 
+    name: "Certified Developer",
+    issuer: "Alibaba Cloud",
+    issuerShort: "Alibaba",
+    year: "2024", 
+    icon: "☁️", 
+    image: "/images/alibaba.png",
+    issuerLogo: "/images/issuers/alibaba.png",
+    issuerColor: "#FF6A00", 
+    desc: "Berhasil mengembangkan aplikasi menggunakan layanan Alibaba Cloud dan mencapai kompetensi sebagai Certified Developer.",
+    credentialId: "ACCD0119700100009779",
+    link: "https://certification.alibabacloud.com/verify", // Link verifikasi umum Alibaba
+    category: "Cloud Computing",
   },
   {
     id: 2,
