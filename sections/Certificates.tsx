@@ -16,7 +16,7 @@ const certs = [
     icon: "☁️", 
     image: "/images/alibaba.png",
     issuerLogo: "/images/issuers/alibaba.png",
-    issuerColor: "#FF6A00", 
+    issuerColor: "#ffffff", 
     desc: "Berhasil mengembangkan aplikasi menggunakan layanan Alibaba Cloud dan mencapai kompetensi sebagai Certified Developer.",
     credentialId: "ACCD0119700100009779",
     link: "https://certification.alibabacloud.com/verify", 
@@ -31,7 +31,7 @@ const certs = [
       icon: "🌐",
       image: "/images/bnsp.jpeg",
       issuerLogo: "/images/issuers/bnsp.png",
-      issuerColor: "#CC0000", //
+      issuerColor: "#ffffff", //
       desc: "Sertifikasi kompetensi nasional dalam bidang Pengembangan Website (Web Development) yang diterbitkan oleh LSP Teknologi Digital melalui program Vocational School Graduate Academy (VSGA).",
       credentialId: "62090 2513 3 0168630 2026",
       link: "https://bnsp.go.id", 
@@ -46,7 +46,7 @@ const certs = [
     icon: "🤖",
     image: "/images/aidasar.png",
     issuerLogo: "/images/issuers/dicoding.png",
-    issuerColor: "#2D3E50", // 
+    issuerColor: "#ffffff", // 
     desc: "Mempelajari konsep dasar kecerdasan buatan (AI), sejarah perkembangan AI, serta pemahaman tentang Machine Learning dan Deep Learning sebagai pilar utama teknologi masa depan.",
     credentialId: "MRZM68VGKPYQ",
     link: "https://www.dicoding.com/certificates/MRZM68VGKPYQ",
