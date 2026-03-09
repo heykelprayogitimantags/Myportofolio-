@@ -336,8 +336,8 @@ export default function Contact() {
                     {/* Name + Email row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                       {[
-                        { name: "name",  label: "Nama Lengkap",  type: "text",  placeholder: "John Doe"          },
-                        { name: "email", label: "Alamat Email",   type: "email", placeholder: "john@email.com"    },
+                        { name: "name",  label: "Nama Lengkap",  type: "text",  placeholder: "Kael Si anak Baik"          },
+                        { name: "email", label: "Alamat Email",   type: "email", placeholder: "kaelanakbaik@email.com"    },
                       ].map((f) => (
                         <div key={f.name}>
                           <label
