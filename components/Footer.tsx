@@ -12,10 +12,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github,        href: "https://github.com/heykelpt",                          label: "GitHub"    },
-  { icon: Linkedin,      href: "https://linkedin.com/in/heykel",                       label: "LinkedIn"  },
-  { icon: Mail,          href: "mailto:heykel.prayogi@student.polmed.ac.id",           label: "Email"     },
-  { icon: MessageCircle, href: "https://wa.me/6281234567890",                          label: "WhatsApp"  },
+  { icon: Github,        href: "https://github.com/heykelprayogitimantags",                   label: "GitHub"    },
+  { icon: Linkedin,      href: "https://www.linkedin.com/in/heykelprayogitimanta/",           label: "LinkedIn"  },
+  { icon: Mail,          href: "heykelprayogi123@gmail.com",                                  label: "Email"     },
+  { icon: MessageCircle, href: "https://wa.me/62878222748144",                                label: "WhatsApp"  },
 ];
 
 export default function Footer() {
@@ -37,7 +37,6 @@ export default function Footer() {
       <div className="max-w-[1160px] mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
-          {/* Left — name + copy */}
           <div className="flex flex-col items-center md:items-start gap-1">
             <a
               href="#hero"
