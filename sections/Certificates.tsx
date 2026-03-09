@@ -5,15 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Shield, X } from "lucide-react";
 
-// ─────────────────────────────────────────────────────────
-//  DATA SERTIFIKAT
-//
-//  • image      : screenshot/foto sertifikat kamu
-//                 taruh di public/images/certs/
-//  • issuerLogo : logo lembaga penerbit
-//                 taruh di public/images/issuers/
-//  • link       : URL verifikasi resmi
-// ─────────────────────────────────────────────────────────
+
 const certs = [
   {
     id: 1, 
@@ -27,7 +19,7 @@ const certs = [
     issuerColor: "#FF6A00", 
     desc: "Berhasil mengembangkan aplikasi menggunakan layanan Alibaba Cloud dan mencapai kompetensi sebagai Certified Developer.",
     credentialId: "ACCD0119700100009779",
-    link: "https://certification.alibabacloud.com/verify", // Link verifikasi umum Alibaba
+    link: "https://certification.alibabacloud.com/verify", 
     category: "Cloud Computing",
   },
   {
