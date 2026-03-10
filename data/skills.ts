@@ -23,10 +23,10 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "React",       iconKey: "react",       level: "Advanced",      percent: 85 },
       { name: "Next.js",     iconKey: "nextjs",      level: "Advanced",      percent: 82 },
-      { name: "TypeScript",  iconKey: "typescript",  level: "Intermediate",  percent: 72 },
+      { name: "TypeScript",  iconKey: "typescript",  level: "Intermediate",  percent: 92 },
       { name: "Tailwind",    iconKey: "tailwind",    level: "Advanced",      percent: 90 },
       { name: "HTML5",       iconKey: "html",        level: "Advanced",      percent: 95 },
-      { name: "CSS3",        iconKey: "css",         level: "Advanced",      percent: 88 },
+      { name: "JAVASCRIPT",  iconKey: "javascript",  level: "Advanced",      percent: 95 },
     ],
   },
   {
