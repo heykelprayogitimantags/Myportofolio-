@@ -440,10 +440,6 @@ export default function Contact() {
                         <h3 className="font-syne font-extrabold text-xl" style={{ color: "var(--text)" }}>
                           Kirim Pesan
                         </h3>
-                        <span className="text-xs font-bold font-syne px-2.5 py-1 rounded-full"
-                          style={{ background: "var(--sky-dim)", color: "var(--sky)", border: "1px solid rgba(56,189,248,0.2)" }}>
-                          Powered by EmailJS
-                        </span>
                       </div>
 
                       {/* Name + Email */}
