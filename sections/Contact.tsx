@@ -445,8 +445,8 @@ export default function Contact() {
                       {/* Name + Email */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                         {[
-                          { name: "name",  label: "Nama Lengkap", type: "text",  placeholder: "John Doe"         },
-                          { name: "email", label: "Email",         type: "email", placeholder: "john@email.com"   },
+                          { name: "name",  label: "Nama Lengkap", type: "text",  placeholder: "hykl si anak baik"         },
+                          { name: "email", label: "Email",         type: "email", placeholder: "hykl@email.com"   },
                         ].map((f) => {
                           const err = errors[f.name as keyof FormData];
                           return (
