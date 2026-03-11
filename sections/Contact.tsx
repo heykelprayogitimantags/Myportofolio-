@@ -17,11 +17,10 @@ const EMAILJS_CONFIG = {
 
 const INFO = {
   email:    "heykelprayogi123@gmail.com",
-  whatsapp: "https://wa.me/6281234567890",
+  whatsapp: "https://wa.me/6287822274814",
   github:   "https://github.com/heykelprayogitimantags",
-  linkedin: "https://linkedin.com/in/heykelpt",
+  linkedin: "https://www.linkedin.com/in/heykelprayogitimanta/",
   location: "Medan, Sumatera Utara 🇮🇩",
-  timezone: "WIB (UTC+7)",
 };
 // ═══════════════════════════════════════════════════════════
 
@@ -29,7 +28,7 @@ const socialLinks = [
   {
     icon:   Github,
     label:  "GitHub",
-    value:  "@heykelpt",
+    value:  "@heykelprayogitimantags",
     href:   INFO.github,
     color:  "#e2e8f0",
     accent: "rgba(226,232,240,0.15)",
@@ -37,7 +36,7 @@ const socialLinks = [
   {
     icon:   Linkedin,
     label:  "LinkedIn",
-    value:  "Heykel Prayogi Timanta",
+    value:  "hykl.",
     href:   INFO.linkedin,
     color:  "#0A66C2",
     accent: "rgba(10,102,194,0.15)",
